@@ -8,12 +8,12 @@ steps:
   # Step 2: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Build Docker image'
-    args: ['build', '-t', 'us-east1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v1.0', '.']
+    args: ['build', '-t', 'us-east1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v2.0', '.']
 
   # Step 3: Push the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Push Docker image'
-    args: ['push', 'us-east1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v1.0']
+    args: ['push', 'us-east1-docker.pkg.dev/$PROJECT_ID/my-repository/hello-cloudbuild-dev:v2.0']
 
   # Step 4: Apply the deployment YAML
   - name: 'gcr.io/cloud-builders/kubectl'
